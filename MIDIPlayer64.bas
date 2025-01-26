@@ -173,7 +173,7 @@ END SUB
 
 
 ' Draws one cassette reel
-SUB DrawReel (x AS LONG, y AS LONG, a AS SINGLE)
+SUB DrawReel (x AS LONG, y AS LONG, a AS LONG)
     STATIC drawCmds AS STRING, clr AS _UNSIGNED LONG
     STATIC AS LONG angle, xp, yp
 
@@ -326,7 +326,7 @@ END SUB
 FUNCTION OnCommandLine%%
     DIM e AS _BYTE: e = EVENT_NONE
 
-    IF GetProgramArgumentIndex(KEY_QUESTION_MARK) > 0 THEN
+    IF GetProgramArgumentIndex(ASC_QUESTION_MARK) > 0 THEN
         ShowAboutDialog
         e = EVENT_QUIT
     ELSE
